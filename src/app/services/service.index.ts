@@ -10,3 +10,5 @@ export { PaymentService } from './Payment/payment.service';
 export { ToursciudadService } from './tours/toursciudad.service';
 export { NetworkService } from './network/network.service';
 export { ChatService } from './chat/chat.service';
+
+export { GuiaService } from './guia/guia.service';

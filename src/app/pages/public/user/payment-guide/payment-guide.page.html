@@ -1,0 +1,68 @@
+<ion-header no-border>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/home/profile">
+            </ion-back-button>
+        </ion-buttons>
+        <ion-title>
+            {{ 'PaymentGuide.Title' | translate }}
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="animated fadeIn login auth-page">
+
+    <ion-row *ngIf="user">
+
+        <!-- Logo -->
+        <div class="padding-horizontal text-center">
+            <div class="logo">
+                <img src="assets/img/tikis/tiki_icono_money.jpg" alt="">
+            </div>
+        </div>
+        <ion-col size="12">
+
+            <form [formGroup]='formulario' (ngSubmit)="mandarDatosPago(formulario.value)">
+                <ion-label position="floating"> </ion-label>
+
+                <ion-item>
+                    <ion-label position="floating">{{ 'PaymentGuide.Pais' | translate }}</ion-label>
+                    <ion-input class="form-control" type="text" formControlName="pais">
+                    </ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label position="floating">{{ 'PaymentGuide.Moneda' | translate }}</ion-label>
+                    <ion-input class="form-control" type="text" formControlName="tipomoneda">
+                    </ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label position="floating">{{ 'PaymentGuide.CuentaPaypal' | translate }} </ion-label>
+                    <ion-textarea class="form-control" type="number" formControlName="clabeInterbancaria">
+                    </ion-textarea>
+                </ion-item>
+                <ion-item>
+                    <ion-label position="floating">{{ 'PaymentGuide.ClabeInterbancaria' | translate }} </ion-label>
+                    <ion-textarea class="form-control" type="number" formControlName="numeroCuenta">
+                    </ion-textarea>
+                </ion-item>
+                <ion-item>
+                    <ion-label position="floating">{{ 'PaymentGuide.Banco' | translate }} </ion-label>
+                    <ion-textarea class="form-control" type="text" formControlName="CURP">
+                    </ion-textarea>
+                </ion-item>
+                <ion-item>
+                    <ion-label position="floating">{{ 'PaymentGuide.RFC' | translate }} </ion-label>
+                    <ion-textarea class="form-control" type="text" formControlName="RFC">
+                    </ion-textarea>
+                </ion-item>
+
+                <ion-col size="12" style="margin:auto">
+                    <ion-button color="primary" type="submit" expand="full" shape="round" class="btn-primary" mode="ios">
+                        {{ 'EditProfile.Enviar' | translate }}
+                    </ion-button>
+                </ion-col>
+            </form>
+        </ion-col>
+        <br><br>
+    </ion-row>
+</ion-content>

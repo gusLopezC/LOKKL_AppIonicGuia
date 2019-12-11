@@ -10,6 +10,7 @@ import {
   EmailService,
   ReservasService,
   // GeolocationService,
+  GuiaService,
   PaymentService,
   NetworkService,
   ChatService
@@ -31,6 +32,7 @@ import {
     EmailService,
     ReservasService,
     //  GeolocationService,
+    GuiaService,
     PaymentService,
     NetworkService,
     ChatService

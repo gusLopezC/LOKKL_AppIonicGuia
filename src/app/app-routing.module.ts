@@ -16,7 +16,13 @@ const routes: Routes = [
   // Soporte
   // tslint:disable-next-line: max-line-length
   { path: 'termsandcondicions', loadChildren: () => import('./pages/public/support/termsandcondicions/termsandcondicions.module').then(m => m.TermsandcondicionsPageModule) },
-  { path: 'help', loadChildren: () => import('./pages/public/support/help/help.module').then(m => m.HelpPageModule) }
+  { path: 'help', loadChildren: () => import('./pages/public/support/help/help.module').then(m => m.HelpPageModule) },
+  {
+    path: 'payment-guide',
+    loadChildren: () => import('./pages/public/user/payment-guide/payment-guide.module').then( m => m.PaymentGuidePageModule)
+  },
+
+  // User
 
 
 ];

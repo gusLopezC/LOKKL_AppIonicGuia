@@ -27,7 +27,7 @@ export class ProfilePage implements OnInit {
   }
 
   goEditProfile() {
-    this.navCtrl.navigateRoot('/editprofile');
+    this.navCtrl.navigateRoot('/home/profile/editprofile');
   }
 
   async abrirAboutUs() {

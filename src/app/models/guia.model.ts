@@ -1,6 +1,6 @@
 
 export class Guia {
-  
+
   constructor(
     public user_id: string,
     public pais: string,
