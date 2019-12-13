@@ -18,12 +18,12 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'reservations',
+        path: 'mistours',
         children: [
           {
             path: '',
             loadChildren: () =>
-              import('../reservation/reservation.module').then(m => m.ReservationPageModule)
+              import('../mistours/mistours.module').then(m => m.MistoursPageModule)
           }
         ]
       },

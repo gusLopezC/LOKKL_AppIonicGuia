@@ -30,10 +30,18 @@
                     <ion-list mode='ios' lines='none'>
                         <ion-item>
                             <ion-avatar slot="start">
-                                <img [src]="reserva.get_guia[0].img  | imagenprofile:'profile'">
+                                <img [src]="reserva.get_comprador[0].img  | imagenprofile:'profile'">
                             </ion-avatar>
-                            <ion-label>{{reserva.get_guia[0].name}}</ion-label>
+                            <ion-label>{{reserva.get_comprador[0].name}}</ion-label>
+                            <div *ngIf="reserva.status == 'Pendiente'">
+                                <ion-button size="small" color="primary" shape="round" class="btn-primary" mode="ios" (click)="aceptarTour(reserva.id)">
+                                    {{ 'Resertation.AceptarTour' | translate }}
+                                </ion-button>
+                            </div>
                         </ion-item>
+                    </ion-list>
+                    <ion-list>
+
                     </ion-list>
                 </ion-card-content>
             </ion-card>

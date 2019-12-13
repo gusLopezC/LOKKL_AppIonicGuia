@@ -8,7 +8,6 @@ import { Storage } from '@ionic/storage';
   providedIn: 'root'
 })
 export class ReservasService {
-
   token: string;
 
   constructor(public http: HttpClient, private storage: Storage) {
@@ -17,9 +16,11 @@ export class ReservasService {
   async obtenertoken() {
     return this.token = await this.storage.get('token') || null;
   }
-  obtenerMisViajes(id: string): Observable<any> {
 
-    const url = environment.apiUrl + '/api/reservaciones/obtenerMisViajes/' + id;
+
+  obtenerReservas(id: string): Observable<any> {
+
+    const url = environment.apiUrl + '/api/reservaciones/obtenerReservaciones/' + id;
 
     let headers = new HttpHeaders();
     headers = headers.set('Content-Type', 'application/json');
@@ -30,9 +31,9 @@ export class ReservasService {
 
   }
 
-  obtenerHistorialMisViajes(id: string): Observable<any> {
+  obtenerHistorialReservas(id: string): Observable<any> {
 
-    const url = environment.apiUrl + '/api/reservaciones/obtenerHistorialMisViajes/' + id;
+    const url = environment.apiUrl + '/api/reservaciones/obtenerHistorialReservaciones/' + id;
 
     let headers = new HttpHeaders();
     headers = headers.set('Content-Type', 'application/json');
@@ -40,6 +41,24 @@ export class ReservasService {
     headers = headers.set('Authorization', 'Bearer ' + this.token);
 
     return this.http.get(url, { headers });
+
+  }
+
+  actualizarEstadoReserva(id: string, estado: string) {
+    const url = environment.apiUrl + '/api/reservaciones/aceptarTour';
+
+    const DatosActualizacion = {
+      id: id,
+      estado: estado
+    };
+
+    let headers = new HttpHeaders();
+    headers = headers.set('Content-Type', 'application/json');
+    headers = headers.set('Accept', 'application/json');
+    headers = headers.set('Authorization', 'Bearer ' + this.token);
+
+
+    return this.http.post(url, DatosActualizacion, { headers });
 
   }
 
@@ -61,13 +80,15 @@ export class ReservasService {
 
   }
 
-  cancelarReservacionCliente(pedido: string, motivo: string) {
-    const url = environment.apiUrl + '/api/reservaciones/cancelarReservacionCliente';
+  cancelarReservacionGuia(pedido: string, motivo: string) {
+    const url = environment.apiUrl + '/api/reservaciones/cancelarReservacionGuia';
 
     const DatosCancelacion = {
       pedido,
       motivo
     };
+
+
     let headers = new HttpHeaders();
     headers = headers.set('Content-Type', 'application/json');
     headers = headers.set('Accept', 'application/json');

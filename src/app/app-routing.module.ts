@@ -21,6 +21,18 @@ const routes: Routes = [
     path: 'payment-guide',
     loadChildren: () => import('./pages/public/user/payment-guide/payment-guide.module').then( m => m.PaymentGuidePageModule)
   },
+  {
+    path: 'mistours',
+    loadChildren: () => import('./pages/public/mistours/mistours.module').then( m => m.MistoursPageModule)
+  },
+  {
+    path: 'cancel-reservation',
+    loadChildren: () => import('./pages/public/reservation/cancel-reservation/cancel-reservation.module').then( m => m.CancelReservationPageModule)
+  },
+  {
+    path: 'chat',
+    loadChildren: () => import('./pages/public/reservation/chat/chat.module').then( m => m.ChatPageModule)
+  },
 
   // User
 

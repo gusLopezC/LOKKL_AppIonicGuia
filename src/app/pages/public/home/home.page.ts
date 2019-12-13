@@ -37,6 +37,7 @@ export class HomePage implements OnInit {
     public toastController: ToastController, ) { }
 
   ngOnInit() {
+    this.obtenerReservaciones();
   }
 
   segmentChanged(event) {
@@ -54,7 +55,7 @@ export class HomePage implements OnInit {
 
     this.revisarConexion().then((valido) => {
       if (valido && (this.user)) {
-        this._reservasService.obtenerMisViajes(this.user.id)
+        this._reservasService.obtenerReservas(this.user.id)
           .subscribe(resp => {
             this.reservas = [];
             if (resp.Reservaciones.length >= 1) {
@@ -84,11 +85,9 @@ export class HomePage implements OnInit {
     this.user = await this._usuarioService.getUsuario();
 
     this.revisarConexion().then((valido) => {
-      console.log(this.user.id);
       if (valido) {
-        this._reservasService.obtenerHistorialMisViajes(this.user.id)
+        this._reservasService.obtenerHistorialReservas(this.user.id)
           .subscribe(resp => {
-            console.log(resp);
             this.reservas = [];
             if (resp.Reservaciones.length >= 1) {
               this.reservas = resp.Reservaciones;

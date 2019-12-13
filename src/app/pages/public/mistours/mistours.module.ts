@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ReservationPageRoutingModule } from './reservation-routing.module';
+import { MistoursPageRoutingModule } from './mistours-routing.module';
 
-import { ReservationPage } from './reservation.page';
+import { MistoursPage } from './mistours.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ReservationPageRoutingModule
+    MistoursPageRoutingModule
   ],
-  declarations: [ReservationPage]
+  declarations: [MistoursPage]
 })
-export class ReservationPageModule {}
+export class MistoursPageModule {}
