@@ -1,0 +1,176 @@
+<ion-header no-border>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/home/mistours">
+            </ion-back-button>
+        </ion-buttons>
+        <ion-title>
+            Create tour
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+
+    <div style="margin: 0 5%;">
+        <ion-item class="ion-no-padding">
+            <ion-label position="floating">
+                <b>¿En que ciudad ofreces la experiencia?</b><br><br>
+            </ion-label>
+            <ion-input type="text" [(ngModel)]="search" (ionChange)="buscar()"></ion-input>
+        </ion-item>
+        <ion-list *ngIf="mostarLista" lines='none'>
+            <ion-item (click)="selectSearchResult(searchResults)">
+                {{searchResults.description}}
+            </ion-item>
+        </ion-list>
+
+    </div>
+    <!-- Login form -->
+    <form [formGroup]="onTourForm" class="list-form">
+
+        <ion-item no-padding>
+            <ion-label position="floating">
+                <b>¿Comó se llama tu tour?</b>
+            </ion-label>
+            <ion-input type="text" formControlName="name"></ion-input>
+        </ion-item>
+        <p ion-text class="text08" *ngIf="onTourForm.get('name').touched && onTourForm.get('name').hasError('required')">
+            <ion-text color="danger">
+                Required Field
+            </ion-text>
+        </p>
+
+        <ion-item no-padding>
+            <ion-label position="floating">
+                <b>¿Comó te pueden reconocer?</b>
+            </ion-label>
+            <ion-input type="text" formControlName="puntoInicio"></ion-input>
+        </ion-item>
+        <p ion-text color="danger" class="text08" *ngIf="onTourForm.get('puntoInicio').touched && onTourForm.get('puntoInicio').hasError('required')">
+            <ion-text color="danger">
+                Required Field
+            </ion-text>
+        </p>
+
+        <ion-item no-padding>
+            <ion-label position="floating">
+                <b>Da una descripción general sobre tu recorrido.</b>
+            </ion-label>
+            <ion-input type="text" formControlName="schedulle"></ion-input>
+        </ion-item>
+        <p ion-text class="text08" *ngIf="onTourForm.get('schedulle').touched && onTourForm.get('schedulle').hasError('required')">
+            <ion-text color="danger">
+                Required Field
+            </ion-text>
+        </p>
+
+        <ion-item no-padding>
+            <ion-label position="floating">
+                <b>Selecciona una categoría de tu tour</b>
+            </ion-label>
+            <ion-select value="brown" okText="Okay" formControlName="categories" cancelText="Dismiss">
+                <ion-select-option value="Cultura">Cultura</ion-select-option>
+                <ion-select-option value="Histórico">Histórico</ion-select-option>
+                <ion-select-option value="Ecoturistico">Ecoturistico</ion-select-option>
+                <ion-select-option value="Aventura">Aventura</ion-select-option>
+                <ion-select-option value="Gastronomico">Gastronomico</ion-select-option>
+                <ion-select-option value="Deportivo">Deportivo</ion-select-option>
+            </ion-select>
+        </ion-item>
+        <p ion-text class="text08" *ngIf="onTourForm.get('categories').touched && onTourForm.get('categories').hasError('required')">
+            <ion-text color="danger">
+                Required Field
+            </ion-text>
+        </p>
+
+        <ion-item no-padding>
+            <ion-label position="floating">
+                <b>Selecciona una categoría de tu tour</b>
+            </ion-label>
+            <ion-select value="brown" okText="Okay" formControlName="categories" cancelText="Dismiss">
+                <ion-select-option value="Cultura">Cultura</ion-select-option>
+                <ion-select-option value="Histórico">Histórico</ion-select-option>
+                <ion-select-option value="Ecoturistico">Ecoturistico</ion-select-option>
+                <ion-select-option value="Aventura">Aventura</ion-select-option>
+                <ion-select-option value="Gastronomico">Gastronomico</ion-select-option>
+                <ion-select-option value="Deportivo">Deportivo</ion-select-option>
+            </ion-select>
+        </ion-item>
+        <p ion-text class="text08" *ngIf="onTourForm.get('categories').touched && onTourForm.get('categories').hasError('required')">
+            <ion-text color="danger">
+                Required Field
+            </ion-text>
+        </p>
+
+        <ion-item no-padding>
+            <ion-label position="floating">
+                <b>Selecciona una categoría de tu tour</b>
+            </ion-label>
+            <ion-select value="brown" okText="Okay" formControlName="categories" cancelText="Dismiss">
+                <ion-select-option value="Cultura">Cultura</ion-select-option>
+                <ion-select-option value="Histórico">Histórico</ion-select-option>
+                <ion-select-option value="Ecoturistico">Ecoturistico</ion-select-option>
+                <ion-select-option value="Aventura">Aventura</ion-select-option>
+                <ion-select-option value="Gastronomico">Gastronomico</ion-select-option>
+                <ion-select-option value="Deportivo">Deportivo</ion-select-option>
+            </ion-select>
+        </ion-item>
+        <p ion-text class="text08" *ngIf="onTourForm.get('categories').touched && onTourForm.get('categories').hasError('required')">
+            <ion-text color="danger">
+                Required Field
+            </ion-text>
+        </p>
+
+
+        <ion-item no-padding>
+            <ion-label position="floating">Toppings</ion-label>
+            <ion-select multiple="true" cancelText="Nah" okText="Okay!">
+                <ion-select-option value="bacon">Español</ion-select-option>
+                <ion-select-option value="olives">Ingles</ion-select-option>
+                <ion-select-option value="xcheese">Extra Cheese</ion-select-option>
+                <ion-select-option value="peppers">Green Peppers</ion-select-option>
+                <ion-select-option value="mushrooms">Mushrooms</ion-select-option>
+                <ion-select-option value="onions">Onions</ion-select-option>
+                <ion-select-option value="pepperoni">Pepperoni</ion-select-option>
+                <ion-select-option value="pineapple">Pineapple</ion-select-option>
+                <ion-select-option value="sausage">Sausage</ion-select-option>
+                <ion-select-option value="Spinach">Spinach</ion-select-option>
+            </ion-select>
+        </ion-item>
+
+        <ion-item no-padding>
+            <ion-label position="floating">
+                <b>Selecciona el tiempo de duracíon de tu tour</b>
+            </ion-label>
+            <ion-select value="brown" okText="Okay" formControlName="duration" cancelText="Dismiss">
+                <ion-select-option value="01:00">01:00 hrs</ion-select-option>
+                <ion-select-option value="02:00">02:00 hrs</ion-select-option>
+                <ion-select-option value="03:00">03:00 hrs</ion-select-option>
+                <ion-select-option value="04:00">04:00 hrs</ion-select-option>
+                <ion-select-option value="05:00">05:00 hrs</ion-select-option>
+                <ion-select-option value="06:00">06:00 hrs</ion-select-option>
+                <ion-select-option value="07:00">07:00 hrs</ion-select-option>
+                <ion-select-option value="08:00">08:00 hrs</ion-select-option>
+                <ion-select-option value="09:00">09:00 hrs</ion-select-option>
+                <ion-select-option value="10:00">10:00 hrs</ion-select-option>
+                <ion-select-option value="11:00">11:00 hrs</ion-select-option>
+                <ion-select-option value="12:00">12:00 hrs</ion-select-option>
+                <ion-select-option value="+24:00">24:00 hrs</ion-select-option>
+            </ion-select>
+        </ion-item>
+        <p ion-text class="text08" *ngIf="onTourForm.get('duration').touched && onTourForm.get('duration').hasError('required')">
+            <ion-text color="danger">
+                Required Field
+            </ion-text>
+        </p>
+        <!-- [disabled]="!onTourForm.valid" -->
+        <div>
+            <ion-button icon-left size="medium" expand="full" shape="round" color="primary" (click)="mandarDatosTour()" tappable>
+                <ion-icon name="log-in"></ion-icon>
+                eNVIAR
+            </ion-button>
+        </div>
+    </form>
+</ion-content>

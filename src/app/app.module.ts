@@ -14,6 +14,9 @@ import { AppComponent } from './app.component';
 
 // ModulosExternos
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
+import { NativeGeocoder } from '@ionic-native/native-geocoder/ngx';
+import { GoogleMaps } from '@ionic-native/google-maps/ngx';
 
 // Librerias
 
@@ -70,13 +73,15 @@ export function LanguageLoader(http: HttpClient) {
     // GooglePlus,
     // Facebook,
     NativeStorage,
+    GoogleMaps,
     SocialSharing,
     InAppBrowser,
     TranslateconfigService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     { provide: FirestoreSettingsToken, useValue: {} },
-
-    // GoogleMaps,
+    Geolocation,
+    NativeGeocoder,
+    GoogleMaps,
 
   ],
   bootstrap: [AppComponent]

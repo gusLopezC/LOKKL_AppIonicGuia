@@ -12,7 +12,7 @@ import { Tours } from '../../../models/tour.model';
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
 })
-export class HomePage implements OnInit {
+export class HomePage {
 
   user: any;
   tours: Tours[] = [];
@@ -36,7 +36,7 @@ export class HomePage implements OnInit {
     private _networkService: NetworkService,
     public toastController: ToastController, ) { }
 
-  ngOnInit() {
+  async ionViewWillEnter() {
     this.obtenerReservaciones();
   }
 
@@ -62,7 +62,6 @@ export class HomePage implements OnInit {
               this.HayTours = true;
               this.NoHayTours = false;
               this.reservas = resp.Reservaciones;
-              console.log(this.reservas);
 
             } else {
               this.messajeVentana = 1;

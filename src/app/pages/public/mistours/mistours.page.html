@@ -1,9 +1,25 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>mistours</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
+
+    <div *ngIf="HayTours">
+
+    </div>
+    <div *ngIf="NoHayTours">
+        <ion-card>
+            <ion-card-header>
+                <ion-card-title>{{ 'AdministrarTour.Notienestours' | translate }}</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+                {{ 'AdministrarTour.PuedescreartuTour' | translate }}
+                <br><br>
+            </ion-card-content>
+        </ion-card>
+    </div>
+
+    <!-- fab placed to the bottom end -->
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="createTour()">
+        <ion-fab-button color="secondary">
+            <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
 
 </ion-content>

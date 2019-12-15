@@ -115,53 +115,8 @@
         "NoInternet2": "Ponte en contacto con nosotros si el problema continua",
         "Actualizar": "Actualizar"
     },
-    "TourDetalle": {
-        "Desde": "Desde",
-        "porpersona": "por persona",
-        "Reservarya": "Reservar ya",
-        "Informaciongeneral": "Informacion general",
-        "Duración": "Duración",
-        "Lugar": "Lugar",
-        "Disponibleen": "Disponible en:",
-        "Conocemasdetalles": "Conoce mas detalles",
-        "Detallescompletos": "Ver Detalles completos",
-        "Itinerario": "Itinerario",
-        "Queincluye": "Que incluye",
-        "AbrirGoogleMaps": " Abrir en Google Maps",
-        "TuLOKKL": "Tu LOKKL"
-    },
-    "Calender": {
-        "Cuando": "¿Cuando te gustaria ir?",
-        "Cuantos": "¿Cuantos participantes?",
-        "Informaciongeneral": "Informacion general",
-        "Duration": "Duración",
-        "Lugar": "Lugar",
-        "Disponibleen": "Disponible en:",
-        "Reservarya": "Reservar ya"
-    },
-    "Facturation": {
-        "Title": "Facturación",
-        "Completatupedido": "Completa tu pedido",
-        "En": "En",
-        "Participantes": "Participantes",
-        "IngresaDatos": "Ingresa los datos de facturación",
-        "NumTelefono": "Número telefónico ",
-        "Reservar": "Reservar"
-    },
-    "Payment": {
-        "Pago": "Pago",
-        "Completapedido": "Completa tu pedido",
-        "Total": "Total",
-        "Comisión": "Comisión",
-        "Seleccionametodopago": "Selecciona tu metodo de pago",
-        "Paypal": "Paypal",
-        "Tarjeta": "Tarjeta de credito o debito",
-        "NameCard": "Nombre titular de la tarjeta",
-        "NumberCard": "Número de tarjeta",
-        "MesExpiracion": "Mes de Expiración",
-        "AnioExpiracion": "Año de Expiración",
-        "CVV": "CVV",
-        "Reservar": "Reservar"
+    "AdministrarTour": {
+        "Notienestours": "Aún no tienes tour creado",
+        "PuedescreartuTour": "Puedes crear un tour y llega a miles de viajeros"
     }
-
 }

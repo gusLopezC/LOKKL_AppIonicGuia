@@ -19,30 +19,29 @@ export class TourService {
     return this.token = await this.storage.get('token') || null;
   }
 
-  obtenerToursNuevos(): Observable<any> {
-    const url = environment.apiUrl + '/api/tours/ObtenerToursNuevos';
-    return this.http.get(url);
-  }
 
-  obtenerTour(slug: string): Observable<any> {
-    const url = environment.apiUrl + '/api/tours/ObtenerTour/' + slug;
+
+  obtenerMisTour(id: string) {
+    const url = environment.apiUrl + '/api/tours/misTours/' + id;
+
     let headers = new HttpHeaders();
     headers = headers.set('Content-Type', 'application/json');
     headers = headers.set('Accept', 'application/json');
-    // headers = headers.set('Authorization', 'Bearer ' + this.token);
+    headers = headers.set('Authorization', 'Bearer ' + this.token);
 
     return this.http.get(url, { headers });
   }
 
-  buscarPorCiudad(placeID: string): Observable<any> {
+  borrarTour(id: string) {
 
-    const url = environment.apiUrl + '/api/tours/ObtenerPorCiudad/' + placeID;
+    const url = environment.apiUrl + '/api/tours/' + id;
 
     let headers = new HttpHeaders();
     headers = headers.set('Content-Type', 'application/json');
-    headers = headers.set('Accept', 'application/json'),
-      headers = headers.set('Authorization', 'Bearer ' + this.token);
+    headers = headers.set('Accept', 'application/json');
+    headers = headers.set('Authorization', 'Bearer ' + this.token);
 
-    return this.http.get(url, { headers });
+    return this.http.delete(url, { headers });
+
   }
 }

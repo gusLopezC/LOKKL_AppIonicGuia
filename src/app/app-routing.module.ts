@@ -10,32 +10,21 @@ const routes: Routes = [
   { path: 'login', loadChildren: () => import('./pages/login/login/login.module').then(m => m.LoginPageModule) },
   { path: 'register', loadChildren: () => import('./pages/login/register/register.module').then(m => m.RegisterPageModule) },
 
-
-  // Profile
-
   // Soporte
   // tslint:disable-next-line: max-line-length
   { path: 'termsandcondicions', loadChildren: () => import('./pages/public/support/termsandcondicions/termsandcondicions.module').then(m => m.TermsandcondicionsPageModule) },
   { path: 'help', loadChildren: () => import('./pages/public/support/help/help.module').then(m => m.HelpPageModule) },
-  {
-    path: 'payment-guide',
-    loadChildren: () => import('./pages/public/user/payment-guide/payment-guide.module').then( m => m.PaymentGuidePageModule)
-  },
-  {
-    path: 'mistours',
-    loadChildren: () => import('./pages/public/mistours/mistours.module').then( m => m.MistoursPageModule)
-  },
-  {
-    path: 'cancel-reservation',
-    loadChildren: () => import('./pages/public/reservation/cancel-reservation/cancel-reservation.module').then( m => m.CancelReservationPageModule)
-  },
-  {
-    path: 'chat',
-    loadChildren: () => import('./pages/public/reservation/chat/chat.module').then( m => m.ChatPageModule)
-  },
 
-  // User
+  // Profile
+  // tslint:disable-next-line: max-line-length
+  { path: 'payment-guide', loadChildren: () => import('./pages/public/user/payment-guide/payment-guide.module').then(m => m.PaymentGuidePageModule) },
 
+  // Mis tours
+  // tslint:disable-next-line: max-line-length
+  { path: 'cancel-reservation', loadChildren: () => import('./pages/public/reservation/cancel-reservation/cancel-reservation.module').then(m => m.CancelReservationPageModule) },
+  { path: 'chat', loadChildren: () => import('./pages/public/reservation/chat/chat.module').then(m => m.ChatPageModule) },
+  // tslint:disable-next-line: max-line-length
+  { path: 'createtour', loadChildren: () => import('./pages/public/mistours/createtour/createtour.module').then(m => m.CreatetourPageModule) }
 
 ];
 @NgModule({
