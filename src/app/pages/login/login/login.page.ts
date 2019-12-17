@@ -1,6 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { NavController, MenuController, ToastController, AlertController, LoadingController } from '@ionic/angular';
+import { NavController, MenuController, ToastController, AlertController, LoadingController, Platform } from '@ionic/angular';
+
+import { AngularFireAuth } from '@angular/fire/auth';
+import * as firebase from 'firebase';
+
+// import { GooglePlus } from '@ionic-native/google-plus/ngx';
+import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook/ngx';
 
 import { UsuariosService } from '../../../services/service.index';
 import { Usuario } from '../../../models/usuario.model';
@@ -21,6 +27,10 @@ export class LoginPage implements OnInit {
     public alertCtrl: AlertController,
     public loadingCtrl: LoadingController,
     private formBuilder: FormBuilder,
+    private platform: Platform,
+    private fb: Facebook,
+    // private googlePlus: GooglePlus,
+    private fireAuth: AngularFireAuth,
     private _usuariosService: UsuariosService
   ) {
   }
@@ -96,6 +106,37 @@ export class LoginPage implements OnInit {
     await alert.present();
   }
 
+  //Login redes sociales
+
+  async LoginFacebook() {
+
+    console.log('Intento sesion Facebbok');
+    const permissions = ['email'];
+
+    this.fb.login(permissions)
+      .then((response: FacebookLoginResponse) => {
+        this.onLoginSuccessFacebbok(response);
+      }, error => {
+        console.log(error);
+        if (!this.platform.is('cordova')) {
+        }
+      });
+
+  }
+  onLoginSuccessFacebbok(res: FacebookLoginResponse) {
+    // const { token, secret } = res;
+    const credential = firebase.auth.FacebookAuthProvider.credential(res.authResponse.accessToken);
+    this.fireAuth.auth.signInWithCredential(credential)
+      .then((response) => {
+
+        const valido = this._usuariosService.loginRedSocial(response.user.providerData[0]);
+        if (valido) {
+          this.navCtrl.navigateRoot('/home/home', { animated: true });
+        } else {
+        }
+      });
+
+  }
 
   // // //
   goToRegister() {

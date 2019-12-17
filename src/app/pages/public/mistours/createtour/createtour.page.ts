@@ -46,8 +46,8 @@ export class CreatetourPage implements OnInit {
       'duration': ['', Validators.required],
       'currencyfield': ['', Validators.required],
       'moneda': ['', Validators.required],
-      /*'idiomas': ['', Validators.required],
-      itinerary: this.formBuilder.array([this.formBuilder.group({ itinerary: [''] })]),
+      'idiomas': ['', Validators.required],
+      /*itinerary: this.formBuilder.array([this.formBuilder.group({ itinerary: [''] })]),
       whatsIncluded: this.formBuilder.array([this.formBuilder.group({ whatsIncluded: [''] })])*/
 
     });

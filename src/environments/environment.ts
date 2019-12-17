@@ -16,7 +16,7 @@ export const environment = {
     measurementId: 'G-YLLTZT97SS'
   },
   // apiUrl: 'http://localhost:8001',
-  apiUrl: 'https://lokkl.ml',
+  apiUrl: 'http://54.215.89.100/',
   URL_AWS: 'https://lokkl.s3.us-east-2.amazonaws.com',
   googleWebClientId: '409077895951-qaitrdbd57oji686am5pipdngh377r98.apps.googleusercontent.com'
 
