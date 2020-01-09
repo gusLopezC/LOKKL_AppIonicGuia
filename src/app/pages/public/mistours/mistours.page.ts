@@ -47,7 +47,8 @@ export class MistoursPage {
   }
 
   createTour() {
-    this.navCtrl.navigateRoot('/createtour');
+
+    // this.navCtrl.navigateRoot('/createtour');
   }
 
 }

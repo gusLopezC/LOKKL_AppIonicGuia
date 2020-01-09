@@ -43,7 +43,7 @@ export class AppComponent {
         this.splashScreen.hide();
       }
 
-      this.statusBar.styleDefault();
+      this.statusBar.styleLightContent();
       this.splashScreen.hide();
     });
   }

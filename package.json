@@ -22,9 +22,10 @@
         "@angular/platform-browser-dynamic": "~8.1.2",
         "@angular/router": "~8.1.2",
         "@ionic-native/core": "^5.18.0",
-        "@ionic-native/facebook": "^5.18.0",
+        "@ionic-native/facebook": "^5.19.0",
         "@ionic-native/geolocation": "^5.18.0",
         "@ionic-native/google-maps": "^5.5.0",
+        "@ionic-native/google-plus": "^5.19.1",
         "@ionic-native/in-app-browser": "^5.18.0",
         "@ionic-native/ionic-webview": "^5.17.1",
         "@ionic-native/native-geocoder": "^5.18.0",
@@ -33,7 +34,7 @@
         "@ionic-native/social-sharing": "^5.18.0",
         "@ionic-native/splash-screen": "^5.0.0",
         "@ionic-native/status-bar": "^5.0.0",
-        "@ionic/angular": "^4.7.1",
+        "@ionic/angular": "^4.11.7",
         "@ionic/storage": "^2.2.0",
         "@ngx-translate/core": "^11.0.1",
         "@ngx-translate/http-loader": "^4.0.0",
@@ -42,7 +43,6 @@
         "cordova-plugin-facebook4": "^6.2.0",
         "cordova-plugin-geolocation": "^4.0.2",
         "cordova-plugin-googlemaps": "^2.6.2",
-        "cordova-plugin-googleplus": "^8.2.1",
         "cordova-plugin-inappbrowser": "^3.1.0",
         "cordova-plugin-nativegeocoder": "^3.2.2",
         "cordova-plugin-nativestorage": "^2.3.2",
@@ -51,7 +51,7 @@
         "cordova-sqlite-storage": "^4.0.0",
         "core-js": "^2.5.4",
         "es6-promise-plugin": "^4.2.2",
-        "firebase": "^7.5.2",
+        "firebase": "^7.6.1",
         "rxjs": "~6.5.1",
         "tslib": "^1.9.0",
         "zone.js": "~0.9.1"
@@ -69,13 +69,13 @@
         "@types/jasmine": "~3.3.8",
         "@types/jasminewd2": "~2.0.3",
         "@types/node": "~8.9.4",
-        "codelyzer": "^5.0.0",
-        "cordova-plugin-device": "^2.0.2",
+        "codelyzer": "^5.2.1",
+        "cordova-plugin-device": "^2.0.3",
         "cordova-plugin-ionic-keyboard": "^2.2.0",
         "cordova-plugin-ionic-webview": "^4.1.3",
-        "cordova-plugin-splashscreen": "^5.0.2",
-        "cordova-plugin-statusbar": "^2.4.2",
-        "cordova-plugin-whitelist": "^1.3.3",
+        "cordova-plugin-splashscreen": "^5.0.3",
+        "cordova-plugin-statusbar": "^2.4.3",
+        "cordova-plugin-whitelist": "^1.3.4",
         "jasmine-core": "~3.4.0",
         "jasmine-spec-reporter": "~4.2.1",
         "karma": "~4.1.0",
@@ -95,22 +95,25 @@
             "cordova-plugin-statusbar": {},
             "cordova-plugin-device": {},
             "cordova-plugin-splashscreen": {},
-            "cordova-plugin-ionic-webview": {},
+            "cordova-plugin-ionic-webview": {
+                "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+"
+            },
             "cordova-plugin-ionic-keyboard": {},
             "cordova-plugin-network-information": {},
-            "cordova-plugin-googlemaps": {},
+            "cordova-plugin-googlemaps": {
+                "PLAY_SERVICES_VERSION": "15.0.1",
+                "ANDROID_SUPPORT_V4_VERSION": "27.+"
+            },
             "cordova-plugin-geolocation": {},
             "cordova-plugin-nativegeocoder": {},
-            "cordova-plugin-googleplus": {
-                "REVERSED_CLIENT_ID": "720001691623-mgbb4te1q8v7ko1p2s5890rjjplcscqe.apps.googleusercontent.com",
-                "WEB_APPLICATION_CLIENT_ID": "720001691623-mgbb4te1q8v7ko1p2s5890rjjplcscqe.apps.googleusercontent.com",
-                "PLAY_SERVICES_VERSION": "15.0.1"
-            },
             "cordova-plugin-facebook4": {
-                "APP_ID": "812641425798592",
-                "APP_NAME": "Lokkl",
+                "APP_ID": "458555765082036",
+                "APP_NAME": "LokklGuia",
                 "FACEBOOK_HYBRID_APP_EVENTS": "false",
                 "FACEBOOK_ANDROID_SDK_VERSION": "5.5.2"
+            },
+            "cordova-plugin-googleplus": {
+                "REVERSED_CLIENT_ID": "776453831528-ckjo4s2rv33ddv8m6r3ksesqd4r7q358.apps.googleusercontent.com"
             }
         },
         "cordova-plugin-ionic-webview": {

@@ -5,7 +5,7 @@ import { NavController, MenuController, ToastController, AlertController, Loadin
 import { AngularFireAuth } from '@angular/fire/auth';
 import * as firebase from 'firebase';
 
-// import { GooglePlus } from '@ionic-native/google-plus/ngx';
+import { GooglePlus } from '@ionic-native/google-plus/ngx';
 import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook/ngx';
 
 import { UsuariosService } from '../../../services/service.index';
@@ -29,7 +29,7 @@ export class LoginPage implements OnInit {
     private formBuilder: FormBuilder,
     private platform: Platform,
     private fb: Facebook,
-    // private googlePlus: GooglePlus,
+    private googlePlus: GooglePlus,
     private fireAuth: AngularFireAuth,
     private _usuariosService: UsuariosService
   ) {
@@ -108,6 +108,61 @@ export class LoginPage implements OnInit {
 
   //Login redes sociales
 
+
+  async doGoogleLogin() {
+
+    let params;
+    if (this.platform.is('android')) {
+      params = {
+        'scopes': '',
+        'webClientId': '776453831528-ckjo4s2rv33ddv8m6r3ksesqd4r7q358.apps.googleusercontent.com',
+        'offline': true,
+      };
+    } else {
+      params = {};
+    }
+    this.googlePlus.login(params)
+      .then((response) => {
+        console.log(response);
+        this.onLoginSuccess((response));
+      }).catch((error) => {
+        console.log(error);
+        alert('Error' + error);
+      });
+  }// end login Google
+
+  onLoginSuccess(response) {
+
+    console.log(response);
+    const UsuarioReponse = {
+      uid: response.userId,
+      displayName: response.displayName,
+      photoURL: response.imageUrl,
+      email: response.email,
+      phoneNumber: null,
+      providerId: null,
+      name: response.givenName
+    };
+
+    console.log(UsuarioReponse);
+
+    const valido = this._usuariosService.loginRedSocial(UsuarioReponse);
+    if (valido) {
+      this.navCtrl.navigateRoot('/home/home', { animated: true });
+    } else {
+      return false;
+    }
+    /*
+    const credential = accessSecret ? firebase.auth.GoogleAuthProvider
+      .credential(accessToken, accessSecret) : firebase.auth.GoogleAuthProvider
+        .credential(accessToken);
+    this.fireAuth.auth.signInWithCredential(credential)
+      .then((response) => {
+        console.log(response);
+      });*/
+
+  }
+
   async LoginFacebook() {
 
     console.log('Intento sesion Facebbok');
@@ -115,6 +170,7 @@ export class LoginPage implements OnInit {
 
     this.fb.login(permissions)
       .then((response: FacebookLoginResponse) => {
+        console.log(response);
         this.onLoginSuccessFacebbok(response);
       }, error => {
         console.log(error);

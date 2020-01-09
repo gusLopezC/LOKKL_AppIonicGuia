@@ -17,7 +17,7 @@ export class CreatetourPage implements OnInit {
 
   public search = '';
   private googleAutocomplete = new google.maps.places.AutocompleteService();
-  public searchResults = new Array<any>();
+  public searchResults: any = {};
 
   public onTourForm: FormGroup;
   mostarLista = false;

@@ -52,9 +52,11 @@ export class HomePage {
 
   async obtenerReservaciones(refresher?) {
     this.user = await this._usuarioService.getUsuario();
+    this.NoConexion = false;
 
     this.revisarConexion().then((valido) => {
       if (valido && (this.user)) {
+
         this._reservasService.obtenerReservas(this.user.id)
           .subscribe(resp => {
             this.reservas = [];
@@ -68,7 +70,10 @@ export class HomePage {
               this.HayTours = false;
               this.NoHayTours = true;
             }
-          });
+          },
+            error => {
+              this.NoConexion = true;
+            });
       } else {
         this.NoConexion = true;
         this.HayTours = false;
@@ -82,6 +87,7 @@ export class HomePage {
   async mostrarHistorial() {
 
     this.user = await this._usuarioService.getUsuario();
+    this.NoConexion = false;
 
     this.revisarConexion().then((valido) => {
       if (valido) {
@@ -97,7 +103,10 @@ export class HomePage {
               this.HayTours = false;
               this.NoHayTours = true;
             }
-          });
+          },
+            error => {
+              this.NoConexion = true;
+            });
       } else {
         this.NoConexion = true;
         this.HayTours = false;
