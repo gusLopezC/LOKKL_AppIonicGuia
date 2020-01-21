@@ -1,110 +1,113 @@
 {
     "TabsMenu": {
-        "Explora": "Explora",
-        "Reservaciones": "Reservaciones",
-        "Favoritos": "Favoritos",
-        "Perfil": "Perfil"
+        "Reservaciones": "Reservations",
+        "AdministraTours": "Manage your tours",
+        "UneteLokkl": "Join LOKKL",
+        "ComoPagarte": "Tell us how to pay him",
+        "Favoritos": "Favorites",
+        "Perfil": "Profile"
     },
     "Login": {
-        "Welcome1": "Descubre que hacer en los alrededores",
-        "Welcome2": "Reserva experiencias inolvidables",
-        "Welcome3": "Reserva experiencias inolvidables",
-        "IniciarSesion": "Iniciar Sesión",
-        "Comenzar": "Comenzar",
-        "LoginGoogle": "Iniciar Sesion con Google",
-        "LoginFacebook": "Iniciar Sesion con Facebook",
-        "LoginMail": "Iniciar Sesion con Mail",
-        "¿Olvidastetucontraseña?": "¿Olvidaste tu contraseña?",
-        "Reservaexperiencia": "Reserva experiencias inovidables en todo el mundo",
-        "Registrate": "Registrate",
-        "Registrarme": "Registrarme",
-        "Name": "Nombre",
-        "Email": "Correo electronico",
-        "Password": "Contraseña",
-        "AceptasTerminos1": "Al continar, confirmas que haz leido y aceptas nuestras",
-        "AceptasTerminos2": "Condiciones de uso",
-        "AceptasTerminos3": "Privacidad",
-        "Olvidemicontrasena": "Olvidé mi contraseña",
-        "OlvidemicontrasenaTexto": "Introduce tu dirección de correo electronico y te enviaremos un enlace para configurar una nueva contraseña",
-        "Recuperar": "Recuperar",
-        "": ""
+        "IniciarSesion": "Login",
+        "Logincon": "Login",
+        "Olvidastetucontraseña": "Forgot your password?",
+        "Registrate": "Register",
+        "Registrarme": "Register me",
+        "NoLogin": "Let's explore",
+        "Name": "Full Name",
+        "Email": "Email",
+        "Password": "Password",
+        "Camporequerido": "Required field",
+        "TengoCuenta": "I have an account now!",
+        "OlvidemicontrasenaTexto": "Enter your email address and we will send you a link to configure a new password",
+        "RecuperarCuenta": "Recover Account"
     },
     "Profile": {
-        "MyPerfil": "Mi Perfil",
-        "IniciaSesion": " Inicia sesión o registrate",
-        "SincronizaSesion": "Sincroniza tu reservacion y administra tu tour y accede mas rapido a tus actividades favoritas.",
-        "IniciarSesion": "Iniciar Sesión",
-        "Editar": "Editar",
-        "Comofunciona": "Como funciona",
-        "Terminosycondiciones": "Terminos y condiciones",
-        "Comopodemosayudarte": "¿Como podemos ayudarte?",
-        "AcerdedeLOKKL": "Acerde de LOKKL",
-        "CerrarSesion": "Cerrar Sesión"
+        "MyPerfil": "My Profile",
+        "IniciaSesion": "Login or register",
+        "SincronizaSesion": "Synchronize your reservation and manage your tour and access your favorite activities faster.",
+        "IniciarSesion": "Login",
+        "Editar": "Edit",
+        "DinosComoPagarte": "Tell us how to pay you",
+        "Terminosycondiciones": "Terms and conditions",
+        "Comopodemosayudarte": "How can we help you?",
+        "AcerdedeLOKKL": "About LOKKL",
+        "CerrarSesion": "Close Session"
 
     },
 
     "EditProfile": {
-        "EditProfileTitle": "Editar Perfil",
-        "Selectphoto": "Actualiza tu foto",
-        "InformacionPersonal": "Informacion personal",
-        "name": "Nombre",
-        "telephone": "Telefono",
-        "Biografia": "Biografia",
-        "Enviar": "Enviar",
-        "ChangePassword": "Cambiar Contraseña",
-        "PasswordActual": "Contraseña Actual",
-        "PasswordOld": "Nueva Contraseña",
-        "PasswordOldConfirm": "Confirma tu nueva contraseña",
-        "Desactivarcuenta": "Desactivar cuenta",
-        "DesactivarcuentaTexto": "Si desactiva su cuenta, ya no estará disponible. No podrá iniciar sesión y acceder a su perfil. Todas las opiniones, fotos y consejos que ha proporcionado específicamente aparecieron en el sitio web.",
-        "Deletecuenta": " Desactivar cuenta"
+        "EditProfileTitle": "Edit Profile",
+        "Selectphoto": "Update your photo",
+        "InformacionPersonal": "Personal information",
+        "name": "Name",
+        "telephone": "Telephone",
+        "Biografia": "Biography",
+        "Enviar": "Send",
+        "ChangePassword": "Change Password",
+        "PasswordActual": "Current Password",
+        "PasswordOld": "New Password",
+        "PasswordOldConfirm": "Confirm your new password",
+        "Desactivarcuenta": "Deactivate account",
+        "DesactivarcuentaTexto": "If you deactivate your account, it will no longer be available. You will not be able to log in and access your profile. All the opinions, photos and advice you have specifically provided appeared on the website.",
+        "Deletecuenta": "Deactivate account"
 
     },
-    "ComoFunciona": {
-        "ComoFuncionaTitle": "Diseña tu viaje ideal",
-        "Title1": "Busca tu destino",
-        "Title1Texto": "Descubre el mundo a través de la mirada de LOKKL, el ingrediente mágico de tu viaje es nuestra obsesión por personalizar tu experiencia, de acuerdo a lo que desees conocer y sugerirte lo que solo un LOKKL conoce.",
-        "Title2": "Elige entre múltiples opciones",
-        "Title2Texto": "Selecciona la opción que más te agrade entre nuestros guías certificados y exclusivos tours y ¡listo! tendrás el tour a tu medida, reservado y garantizado.",
-        "Title3": "Hora de viajar",
-        "Title3Texto": "Hay muchas y diferentes maneras de viajar, pero tú, has elegido la mejor, solo te queda disfrutar de esta inigualable experiencia. Nuestro equipo de especialistas está para servirte 24/7.",
-        "Title4": "Comparte tu experiencia",
-        "Title4Texto": "Ayudanos a mejorar nuestro servicio comparte y califica tu experiencia."
 
-    },
     "Help": {
-        "HelpTitle": "Necesitas contactarnos",
-        "Enviamosmail": "Enviamos un email",
-        "EnviamosmailText": "Escribe a nuestro departamento de atención al cliente",
-        "EnvianosWhatsApp": "Escribemos via WhatsApp",
-        "EnvianosWhatsAppText": "Escribemos de manera directa y rapida, uno de nuestros representantes te atendera a la brevedad",
-        "Tienesunapregunta": "¿Tienes una pregunta?",
-        "TienesunapreguntaTexto": "Si tienes alguna pregunta puedes consultar nuestra seccion de ayuda y te apoyaremos en cad apaso ",
-        "LLevameahora": "LLevame ahora",
-        "Acerdede": "Acerde de Lokkl"
+        "HelpTitle": "You need to contact us",
+        "Enviamosmail": "We send an email",
+        "EnviamosmailText": "Write to our customer service department",
+        "EnvianosWhatsApp": "Write us via WhatsApp",
+        "EnvianosWhatsAppText": "Written directly and quickly, one of our representatives will attend you shortly",
+        "Tienesunapregunta": "Do you have a question?",
+        "TienesunapreguntaTexto": "If you have any questions, you can check our help section and the support at each step",
+        "LLevameahora": "Take me now",
+        "Acerdede": "About Lokkl"
     },
-    "Favoritos": {
-        "Favoritos": "Favoritos",
-        "NotienesFavoritos": "Parece que aun no tienes favoritos",
-        "NotienesActividades": "No tienes actividades o actracciones aun explora uno de nuestros destinos",
-        "Exploremos": "Exploremos"
+    "PaymentGuide": {
+        "Title": "Tell us how to pay you",
+        "Pais": "Enter your country",
+        "Moneda": "Payment currency",
+        "CuentaPaypal": "No. Paypal Account (Optional)",
+        "ClabeInterbancaria": "Account / CLABE-interbank for transfer",
+        "Banco": "Enter the name of the banking institution.",
+        "RFC": "Enter your tax or taxpayer registration number (ex: RFC)"
+
     },
     "Resertation": {
-        "Title": "Reservaciones",
-        "Activas": "Activas",
-        "Historial": "Historial",
-        "NoSesion": "Inicia sesión para sincronizar tus resevas",
-        "IniciaSesion": "Inicia Sesión",
-        "NotienesReservaciones": "Aun no tienes reservaciones",
-        "NotienesHistorial": "No tienes viajes en historial",
-        "Explora": "Explora y encuentra tu viaje idea"
+        "Title": "Reservations",
+        "Activas": "Active",
+        "Historial": "History",
+        "NoSesion": "Login to synchronize your reservations",
+        "IniciaSesion ": "Login",
+        "NotienesReservaciones": "You don't have reservations yet",
+        "NotienesHistorial": "You have no trips in history",
+        "Actualizar": "Update",
+        "Pendiente": "Pending",
+        "Aceptado": "Accepted",
+        "Realizado": "Done",
+        "Cancelado": "Canceled",
+        "AceptarTour": "Accept tour"
+    },
+    "CancelReservation": {
+        "Title": "Cancel Reservation",
+        "SeguroQuieresCancelar": "Surely you want to cancel your reservation",
+        "IndicaElMotivo": "Please indicate the reason for your cancellation",
+        "CancelarTour": "Cancel tour",
+        "NopuedesCancelar": "You cannot cancel this reservation",
+        "NopuedesCancelarText": "I'm sorry you can no longer cancel your reservation as it is within the 48 hours allowed for cancellation.",
+        "NopuedesCancelarText2": "Communicate with support to be able to know the details and inform if you consider it an error."
     },
     "Alertas": {
         "Exploremos": "Exploremos",
-        "HuboError": "Hubo un error.",
-        "Nointernet": "Por favor vuelve a intentar mas tarde",
-        "NoInternet2": "Ponte en contacto con nosotros si el problema continua",
-        "Actualizar": "Actualizar"
+        "HuboError": "There was an error.",
+        "Nointernet": "Please try again later",
+        "NoInternet2": "Contact us if the problem continues",
+        "Actualizar": "Update"
+    },
+    "AdministrarTour": {
+        "Notienestours": "You don't have a tour created yet",
+        "PuedescreartuTour": "You can create a tour and reach thousands of travelers"
     }
-
 }

@@ -1,7 +1,7 @@
 {
-  "name": "Lokkl-GuiaApp",
-  "integrations": {
-    "cordova": {}
-  },
-  "type": "angular"
+    "name": "Lokkl Guide",
+    "integrations": {
+        "cordova": {}
+    },
+    "type": "angular"
 }

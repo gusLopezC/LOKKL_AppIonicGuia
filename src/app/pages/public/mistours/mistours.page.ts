@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuariosService, TourService } from '../../../services/service.index';
 import { Storage } from '@ionic/storage';
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
+
 import { Usuario } from '../../../models/usuario.model';
 import { Tours } from '../../../models/tour.model';
 import { NavController } from '@ionic/angular';
@@ -22,7 +24,8 @@ export class MistoursPage {
     public navCtrl: NavController,
     public _usuarioService: UsuariosService,
     public _toursService: TourService,
-    private storage: Storage, ) { }
+    private storage: Storage,
+    private iab: InAppBrowser) { }
 
   async ionViewWillEnter() {
 
@@ -35,6 +38,7 @@ export class MistoursPage {
 
     this._toursService.obtenerMisTour(this.usuario.id)
       .subscribe((resp: any) => {
+        console.log(resp);
         if (resp.Tours.length >= 1) {
           this.tours = resp.Tours;
           this.HayTours = true;
@@ -47,6 +51,12 @@ export class MistoursPage {
   }
 
   createTour() {
+
+    const browser = this.iab.create('https://lokkl.com/users/createtours');
+
+  
+
+    browser.close();
 
     // this.navCtrl.navigateRoot('/createtour');
   }

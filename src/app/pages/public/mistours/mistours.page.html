@@ -1,7 +1,36 @@
 <ion-content>
 
     <div *ngIf="HayTours">
+        <ion-grid fixed>
+            <ion-row>
+                <div *ngFor="let tour of tours" class="fullwidth">
+                    <ion-card class="tall">
 
+                        <ion-card-header>
+
+                            <ion-card-title><b>{{tour.name}}</b>
+                                <strong style="float: right;"> $ {{tour.price}}{{tour.moneda}}  </strong>
+                            </ion-card-title>
+                        </ion-card-header>
+                        <ion-card-content>
+                            <ion-list mode='ios' lines='none'>
+                                <ion-item>
+                                    <ion-avatar slot="start">
+                                        <img [src]="tour.get_photos[0].photo  | imagenprofile:'tours'">
+                                    </ion-avatar>
+                                    <ion-label>{{tour.cuidad}} {{tour.pais}}</ion-label>
+
+                                </ion-item>
+                            </ion-list>
+                            <ion-list>
+
+                            </ion-list>
+                        </ion-card-content>
+                    </ion-card>
+                </div>
+
+            </ion-row>
+        </ion-grid>
     </div>
     <div *ngIf="NoHayTours">
         <ion-card>

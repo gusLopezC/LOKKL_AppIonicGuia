@@ -101,7 +101,7 @@ export class UsuariosService {
     this.token = token;
     await this.storage.set('token', token);
     await this.storage.set('usuario', usuario);
-    // await this.validaToken();
+    console.log('Se han guardado');
   }
 
   async cargarToken() {

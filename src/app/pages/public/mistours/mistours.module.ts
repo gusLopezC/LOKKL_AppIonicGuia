@@ -7,12 +7,14 @@ import { IonicModule } from '@ionic/angular';
 import { MistoursPageRoutingModule } from './mistours-routing.module';
 
 import { MistoursPage } from './mistours.page';
+import { PipesModule } from 'src/app/pipes/pipes.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
+    PipesModule,
     MistoursPageRoutingModule,
     TranslateModule.forChild(),
   ],

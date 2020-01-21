@@ -1,5 +1,5 @@
 {
-    "name": "Lokkl-GuiaApp",
+    "name": "Lokkl Guide",
     "version": "0.0.1",
     "author": "Ionic Framework",
     "homepage": "https://ionicframework.com/",
@@ -113,7 +113,7 @@
                 "FACEBOOK_ANDROID_SDK_VERSION": "5.5.2"
             },
             "cordova-plugin-googleplus": {
-                "REVERSED_CLIENT_ID": "776453831528-ckjo4s2rv33ddv8m6r3ksesqd4r7q358.apps.googleusercontent.com"
+                "REVERSED_CLIENT_ID": "776453831528-n65a1eecjrj1hr8e9igljdtum1iva8gs.apps.googleusercontent.com"
             }
         },
         "cordova-plugin-ionic-webview": {

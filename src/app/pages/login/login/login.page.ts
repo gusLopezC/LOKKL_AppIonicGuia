@@ -115,7 +115,7 @@ export class LoginPage implements OnInit {
     if (this.platform.is('android')) {
       params = {
         'scopes': '',
-        'webClientId': '776453831528-ckjo4s2rv33ddv8m6r3ksesqd4r7q358.apps.googleusercontent.com',
+        'webClientId': '776453831528-n65a1eecjrj1hr8e9igljdtum1iva8gs.apps.googleusercontent.com',
         'offline': true,
       };
     } else {
@@ -123,17 +123,14 @@ export class LoginPage implements OnInit {
     }
     this.googlePlus.login(params)
       .then((response) => {
-        console.log(response);
         this.onLoginSuccess((response));
       }).catch((error) => {
-        console.log(error);
-        alert('Error' + error);
+        this.onLoginError(error);
       });
   }// end login Google
 
   onLoginSuccess(response) {
 
-    console.log(response);
     const UsuarioReponse = {
       uid: response.userId,
       displayName: response.displayName,
@@ -144,22 +141,12 @@ export class LoginPage implements OnInit {
       name: response.givenName
     };
 
-    console.log(UsuarioReponse);
-
     const valido = this._usuariosService.loginRedSocial(UsuarioReponse);
     if (valido) {
       this.navCtrl.navigateRoot('/home/home', { animated: true });
     } else {
       return false;
     }
-    /*
-    const credential = accessSecret ? firebase.auth.GoogleAuthProvider
-      .credential(accessToken, accessSecret) : firebase.auth.GoogleAuthProvider
-        .credential(accessToken);
-    this.fireAuth.auth.signInWithCredential(credential)
-      .then((response) => {
-        console.log(response);
-      });*/
 
   }
 
@@ -189,8 +176,23 @@ export class LoginPage implements OnInit {
         if (valido) {
           this.navCtrl.navigateRoot('/home/home', { animated: true });
         } else {
+          return false;
         }
       });
+
+  }
+
+
+  async onLoginError(err) {
+    const toast = await this.toastCtrl.create({
+      showCloseButton: true,
+      message: 'A ocurrido un error vuelve a intentar.' + err,
+      duration: 3000,
+      color: 'danger',
+      position: 'bottom'
+    });
+
+    toast.present();
 
   }
 

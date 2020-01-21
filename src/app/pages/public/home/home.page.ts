@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonSegment, ToastController } from '@ionic/angular';
+import { Storage } from '@ionic/storage';
 
 import { NetworkService, ConnectionStatus } from '../../../services/network/network.service';
 import { UsuariosService, ReservasService } from '../../../services/service.index';
@@ -29,15 +30,19 @@ export class HomePage {
 
   NoConexion = false;
   messajeVentana = 1;
+  token: string;
 
   constructor(
     private _usuarioService: UsuariosService,
     public _reservasService: ReservasService,
     private _networkService: NetworkService,
-    public toastController: ToastController, ) { }
+    public toastController: ToastController,
+    private storage: Storage, ) { }
 
   async ionViewWillEnter() {
-    this.obtenerReservaciones();
+    setTimeout(() => {
+      this.obtenerReservaciones();
+    }, 1500);
   }
 
   segmentChanged(event) {
@@ -52,6 +57,9 @@ export class HomePage {
 
   async obtenerReservaciones(refresher?) {
     this.user = await this._usuarioService.getUsuario();
+    this.token = await this.storage.get('token') || null;
+
+
     this.NoConexion = false;
 
     this.revisarConexion().then((valido) => {

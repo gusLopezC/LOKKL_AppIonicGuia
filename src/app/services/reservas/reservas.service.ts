@@ -8,6 +8,7 @@ import { Storage } from '@ionic/storage';
   providedIn: 'root'
 })
 export class ReservasService {
+
   token: string;
 
   constructor(public http: HttpClient, private storage: Storage) {
@@ -19,7 +20,6 @@ export class ReservasService {
 
 
   obtenerReservas(id: string): Observable<any> {
-
     const url = environment.apiUrl + '/api/reservaciones/obtenerReservaciones/' + id;
 
     let headers = new HttpHeaders();
