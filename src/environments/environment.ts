@@ -6,14 +6,16 @@ export const environment = {
   production: false,
 
   firebaseConfig: {
-    apiKey: 'AIzaSyAJtcWz3YU6_QkHuPDO0V_fVxfAvAH4_ag',
-    authDomain: 'boxwood-coil-264019.firebaseapp.com',
-    databaseURL: 'https://boxwood-coil-264019.firebaseio.com',
-    projectId: 'boxwood-coil-264019',
-    storageBucket: 'boxwood-coil-264019.appspot.com',
-    messagingSenderId: '776453831528',
-    appId: '1:776453831528:web:5a1c522e1efa825da574dd',
-    measurementId: 'G-8JEK6SXZ34'
+     apiKey: "AIzaSyDQm9OHTJAmiLcxUMtPYSbSE65IdYGJX2I",
+    authDomain: "lokklguia.firebaseapp.com",
+    databaseURL: "https://lokklguia.firebaseio.com",
+    projectId: "lokklguia",
+    storageBucket: "lokklguia.appspot.com",
+    messagingSenderId: "455775910147",
+    appId: "1:455775910147:web:be738b6ca543cc96691136",
+    measurementId: "G-ZP5223Y9SJ"
+
+
   },
   // apiUrl: 'http://localhost:8001',
   apiUrl: 'https://api.lokkl.com',

@@ -1,5 +1,5 @@
 {
-    "name": "Lokkl Guide",
+    "name": "LokklGuide",
     "version": "0.0.1",
     "author": "Ionic Framework",
     "homepage": "https://ionicframework.com/",
@@ -39,10 +39,10 @@
         "@ngx-translate/core": "^11.0.1",
         "@ngx-translate/http-loader": "^4.0.0",
         "cordova-android": "^8.1.0",
-        "cordova-browser": "^6.0.0",
         "cordova-plugin-facebook4": "^6.2.0",
         "cordova-plugin-geolocation": "^4.0.2",
         "cordova-plugin-googlemaps": "^2.6.2",
+        "cordova-plugin-googleplus": "^8.2.1",
         "cordova-plugin-inappbrowser": "^3.1.0",
         "cordova-plugin-nativegeocoder": "^3.2.2",
         "cordova-plugin-nativestorage": "^2.3.2",
@@ -58,7 +58,7 @@
     },
     "devDependencies": {
         "@angular-devkit/architect": "~0.801.2",
-        "@angular-devkit/build-angular": "~0.801.2",
+        "@angular-devkit/build-angular": "^0.803.23",
         "@angular-devkit/core": "~8.1.2",
         "@angular-devkit/schematics": "~8.1.2",
         "@angular/cli": "~8.1.2",
@@ -113,14 +113,13 @@
                 "FACEBOOK_ANDROID_SDK_VERSION": "5.5.2"
             },
             "cordova-plugin-googleplus": {
-                "REVERSED_CLIENT_ID": "776453831528-n65a1eecjrj1hr8e9igljdtum1iva8gs.apps.googleusercontent.com"
+                "REVERSED_CLIENT_ID": "455775910147-tip0al5d6ddakp89v8vkg4a2g7m337jf.apps.googleusercontent.com"
             }
         },
         "cordova-plugin-ionic-webview": {
             "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+"
         },
         "platforms": [
-            "browser",
             "android"
         ]
     }

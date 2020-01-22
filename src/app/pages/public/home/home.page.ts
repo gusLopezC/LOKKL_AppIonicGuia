@@ -42,7 +42,7 @@ export class HomePage {
   async ionViewWillEnter() {
     setTimeout(() => {
       this.obtenerReservaciones();
-    }, 1500);
+    }, 2000);
   }
 
   segmentChanged(event) {

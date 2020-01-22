@@ -106,32 +106,42 @@ export class LoginPage implements OnInit {
     await alert.present();
   }
 
-  //Login redes sociales
-
+  // Login redes sociales
 
   async doGoogleLogin() {
-
     let params;
     if (this.platform.is('android')) {
       params = {
-        'scopes': '',
-        'webClientId': '776453831528-n65a1eecjrj1hr8e9igljdtum1iva8gs.apps.googleusercontent.com',
+        'webClientId': '455775910147-ekatv5nv4s47q8ulsvuors47afp69m9s.apps.googleusercontent.com',
         'offline': true,
       };
     } else {
       params = {};
     }
+    console.log(params);
     this.googlePlus.login(params)
       .then((response) => {
-        this.onLoginSuccess((response));
+        console.log(response);
+        const { idToken, accessToken } = response;
+        this.onLoginSuccess(idToken, accessToken);
+        // this.onLoginSuccess((response));
       }).catch((error) => {
         this.onLoginError(error);
       });
   }// end login Google
 
-  onLoginSuccess(response) {
+  // onLoginSuccess(response) {
+  onLoginSuccess(accessToken, accessSecret) {
 
-    const UsuarioReponse = {
+    const credential = accessSecret ? firebase.auth.GoogleAuthProvider
+      .credential(accessToken, accessSecret) : firebase.auth.GoogleAuthProvider
+        .credential(accessToken);
+    this.fireAuth.auth.signInWithCredential(credential)
+      .then((response) => {
+        console.log(response);
+        this.navCtrl.navigateRoot('/home/home', { animated: true });
+      })
+    /*const UsuarioReponse = {
       uid: response.userId,
       displayName: response.displayName,
       photoURL: response.imageUrl,
@@ -146,8 +156,7 @@ export class LoginPage implements OnInit {
       this.navCtrl.navigateRoot('/home/home', { animated: true });
     } else {
       return false;
-    }
-
+    }*/
   }
 
   async LoginFacebook() {
