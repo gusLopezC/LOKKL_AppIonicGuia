@@ -113,7 +113,8 @@
                 "FACEBOOK_ANDROID_SDK_VERSION": "5.5.2"
             },
             "cordova-plugin-googleplus": {
-                "REVERSED_CLIENT_ID": "455775910147-tip0al5d6ddakp89v8vkg4a2g7m337jf.apps.googleusercontent.com"
+                "REVERSED_CLIENT_ID": "455775910147-5uqe5e8qf5hq70f1h8bpb11ect6ji5ij.apps.googleusercontent.com",
+                "WEB_APPLICATION_CLIENT_ID": "455775910147-5uqe5e8qf5hq70f1h8bpb11ect6ji5ij.apps.googleusercontent.com"
             }
         },
         "cordova-plugin-ionic-webview": {

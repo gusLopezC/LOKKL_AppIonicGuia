@@ -112,36 +112,24 @@ export class LoginPage implements OnInit {
     let params;
     if (this.platform.is('android')) {
       params = {
-        'webClientId': '455775910147-ekatv5nv4s47q8ulsvuors47afp69m9s.apps.googleusercontent.com',
+        'webClientId': '455775910147-tip0al5d6ddakp89v8vkg4a2g7m337jf.apps.googleusercontent.com',
         'offline': true,
       };
     } else {
       params = {};
     }
-    console.log(params);
     this.googlePlus.login(params)
       .then((response) => {
-        console.log(response);
-        const { idToken, accessToken } = response;
-        this.onLoginSuccess(idToken, accessToken);
-        // this.onLoginSuccess((response));
+        this.onLoginSuccess((response));
       }).catch((error) => {
         this.onLoginError(error);
       });
   }// end login Google
 
-  // onLoginSuccess(response) {
-  onLoginSuccess(accessToken, accessSecret) {
+  onLoginSuccess(response) {
+    // onLoginSuccess(accessToken, accessSecret) {
 
-    const credential = accessSecret ? firebase.auth.GoogleAuthProvider
-      .credential(accessToken, accessSecret) : firebase.auth.GoogleAuthProvider
-        .credential(accessToken);
-    this.fireAuth.auth.signInWithCredential(credential)
-      .then((response) => {
-        console.log(response);
-        this.navCtrl.navigateRoot('/home/home', { animated: true });
-      })
-    /*const UsuarioReponse = {
+    const UsuarioReponse = {
       uid: response.userId,
       displayName: response.displayName,
       photoURL: response.imageUrl,
@@ -156,7 +144,7 @@ export class LoginPage implements OnInit {
       this.navCtrl.navigateRoot('/home/home', { animated: true });
     } else {
       return false;
-    }*/
+    }
   }
 
   async LoginFacebook() {
