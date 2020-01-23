@@ -59,13 +59,18 @@ export class HomePage {
     this.user = await this._usuarioService.getUsuario();
     this.token = await this.storage.get('token') || null;
 
+    if (!this.token) {
+      setTimeout(() => {
+        this.obtenerReservaciones();
+      }, 4000);
+    }
 
     this.NoConexion = false;
 
     this.revisarConexion().then((valido) => {
       if (valido && (this.user)) {
 
-        this._reservasService.obtenerReservas(this.user.id)
+        this._reservasService.obtenerReservas(this.user.id, this.token)
           .subscribe(resp => {
             this.reservas = [];
             if (resp.Reservaciones.length >= 1) {

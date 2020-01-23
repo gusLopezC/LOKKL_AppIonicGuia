@@ -6,16 +6,14 @@ export const environment = {
   production: false,
 
   firebaseConfig: {
-     apiKey: "AIzaSyDQm9OHTJAmiLcxUMtPYSbSE65IdYGJX2I",
-    authDomain: "lokklguia.firebaseapp.com",
-    databaseURL: "https://lokklguia.firebaseio.com",
-    projectId: "lokklguia",
-    storageBucket: "lokklguia.appspot.com",
-    messagingSenderId: "455775910147",
-    appId: "1:455775910147:web:be738b6ca543cc96691136",
-    measurementId: "G-ZP5223Y9SJ"
-
-
+    apiKey: 'AIzaSyBX3OaP6G8aV2U7EtL989rulbtSnnKa2mI',
+    authDomain: 'lokklguia.firebaseapp.com',
+    databaseURL: 'https://lokklguia.firebaseio.com',
+    projectId: 'lokklguia',
+    storageBucket: 'lokklguia.appspot.com',
+    messagingSenderId: '455775910147',
+    appId: '1:455775910147:web:b1a3f8fb9ec5cfd3691136',
+    measurementId: 'G-4DK0P51S9N'
   },
   // apiUrl: 'http://localhost:8001',
   apiUrl: 'https://api.lokkl.com',

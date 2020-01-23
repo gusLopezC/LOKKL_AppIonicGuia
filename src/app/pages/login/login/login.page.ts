@@ -112,7 +112,7 @@ export class LoginPage implements OnInit {
     let params;
     if (this.platform.is('android')) {
       params = {
-        'webClientId': '455775910147-tip0al5d6ddakp89v8vkg4a2g7m337jf.apps.googleusercontent.com',
+        'webClientId': '455775910147-6ea2ienn9rljl9rm2shrc56a0sni5kqg.apps.googleusercontent.com',
         'offline': true,
       };
     } else {
@@ -120,31 +120,40 @@ export class LoginPage implements OnInit {
     }
     this.googlePlus.login(params)
       .then((response) => {
-        this.onLoginSuccess((response));
+        const { idToken, accessToken } = response;
+        this.onLoginSuccess(idToken, accessToken);
+        // this.onLoginSuccess((response));
       }).catch((error) => {
         this.onLoginError(error);
       });
   }// end login Google
 
-  onLoginSuccess(response) {
-    // onLoginSuccess(accessToken, accessSecret) {
+  // onLoginSuccess(response) {
+  onLoginSuccess(accessToken, accessSecret) {
 
-    const UsuarioReponse = {
-      uid: response.userId,
-      displayName: response.displayName,
-      photoURL: response.imageUrl,
-      email: response.email,
-      phoneNumber: null,
-      providerId: null,
-      name: response.givenName
-    };
+    const credential = accessSecret ? firebase.auth.GoogleAuthProvider
+      .credential(accessToken, accessSecret) : firebase.auth.GoogleAuthProvider
+        .credential(accessToken);
+    this.fireAuth.auth.signInWithCredential(credential)
+      .then((response) => {
+        const UsuarioReponse = {
+          uid: response.user.uid,
+          displayName: response.user.displayName,
+          photoURL: response.user.photoURL,
+          email: response.user.email,
+          phoneNumber: null,
+          providerId: null,
+          name: response.user.displayName,
+        };
+        const valido = this._usuariosService.loginRedSocial(UsuarioReponse);
+        if (valido) {
+          this.navCtrl.navigateRoot('/home/home', { animated: true });
+        } else {
+          return false;
+        }
 
-    const valido = this._usuariosService.loginRedSocial(UsuarioReponse);
-    if (valido) {
-      this.navCtrl.navigateRoot('/home/home', { animated: true });
-    } else {
-      return false;
-    }
+      });
+    /**/
   }
 
   async LoginFacebook() {

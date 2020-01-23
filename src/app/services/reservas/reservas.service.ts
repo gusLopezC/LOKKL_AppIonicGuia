@@ -18,14 +18,16 @@ export class ReservasService {
     return this.token = await this.storage.get('token') || null;
   }
 
+  obtenerReservas(id: string, token: string): Observable<any> {
 
-  obtenerReservas(id: string): Observable<any> {
+    console.log(this.token);
+
     const url = environment.apiUrl + '/api/reservaciones/obtenerReservaciones/' + id;
 
     let headers = new HttpHeaders();
     headers = headers.set('Content-Type', 'application/json');
     headers = headers.set('Accept', 'application/json');
-    headers = headers.set('Authorization', 'Bearer ' + this.token);
+    headers = headers.set('Authorization', 'Bearer ' + token);
 
     return this.http.get(url, { headers });
 

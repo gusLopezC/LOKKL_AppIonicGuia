@@ -21,7 +21,7 @@
         "@angular/platform-browser": "~8.1.2",
         "@angular/platform-browser-dynamic": "~8.1.2",
         "@angular/router": "~8.1.2",
-        "@ionic-native/core": "^5.18.0",
+        "@ionic-native/core": "^5.19.1",
         "@ionic-native/facebook": "^5.19.0",
         "@ionic-native/geolocation": "^5.18.0",
         "@ionic-native/google-maps": "^5.5.0",
@@ -113,8 +113,9 @@
                 "FACEBOOK_ANDROID_SDK_VERSION": "5.5.2"
             },
             "cordova-plugin-googleplus": {
-                "REVERSED_CLIENT_ID": "455775910147-5uqe5e8qf5hq70f1h8bpb11ect6ji5ij.apps.googleusercontent.com",
-                "WEB_APPLICATION_CLIENT_ID": "455775910147-5uqe5e8qf5hq70f1h8bpb11ect6ji5ij.apps.googleusercontent.com"
+                "REVERSED_CLIENT_ID": "455775910147-vdb7fkuc6ish5bfo1e60b2k6rqrg5rv4.apps.googleusercontent.com",
+                "WEB_APPLICATION_CLIENT_ID": "455775910147-vdb7fkuc6ish5bfo1e60b2k6rqrg5rv4.apps.googleusercontent.com",
+                "PLAY_SERVICES_VERSION": "15.0.1"
             }
         },
         "cordova-plugin-ionic-webview": {

@@ -1,3 +1,26 @@
 debug
 A2:76:F0:BB:0E:B0:BD:04:17:0A:12:C9:2D:76:FE:2A:A6:1F:04:03
 
+
+keytool -list -printcert -jarfile 
+
+
+
+
+
+
+cordova plugin rm cordova-plugin-googleplus
+
+
+ionic cordova plugin add cordova-plugin-googleplus --save --variable REVERSED_CLIENT_ID= --variable WEB_APPLICATION_CLIENT_ID=
+
+
+
+
+
+
+
+
+
+
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore lokklguia.keystore  app-release-unsigned.apk lokklguia
