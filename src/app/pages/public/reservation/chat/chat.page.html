@@ -1,9 +1,46 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>chat</ion-title>
-  </ion-toolbar>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="end">
+            <ion-button icon-only (click)="exitChat()">
+                <ion-icon name="exit"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content [scrollEvents]="true">
+    <ion-list class="chat-list" mode='ios' lines='none'>
+        <ion-item *ngFor="let chat of chats" no-lines>
+            <!--<div class="chat-status" text-center>
+              <span class="chat-date">{{chat.sendDate | date:'short'}}</span>
+              <span class="chat-content-center">{{chat.mensaje}}</span>
+          </div>-->
+            <div class="chat-message text-right" *ngIf="chat.id_comprador === user.id">
+                <div class="right-bubble">
+                    <p text-wrap>{{chat.mensaje}}</p>
+                </div>
+            </div>
+            <div class="chat-message text-left" *ngIf="chat.id_comprador !== user.id">
+                <div class="left-bubble">
+                    <span class="msg-name"></span>
+                    <p text-wrap>{{chat.mensaje}}</p>
+                </div>
+            </div>
 
+        </ion-item>
+    </ion-list>
+    <div id="endVista"></div>
 </ion-content>
+
+<ion-footer>
+
+    <ion-toolbar>
+        <ion-input type="text" placeholder="Type a message" [(ngModel)]="message" name="message"></ion-input>
+        <ion-buttons slot="end">
+            <ion-button slot="end" color="primary" (click)="sendChatMessage()">
+                Send
+                <ion-icon name="send"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-footer>

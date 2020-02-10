@@ -29,7 +29,8 @@ export class EditprofilePage implements OnInit {
     this.formulario = formBuilder.group({
       name: new FormControl('', { updateOn: 'blur' }),
       telephone: new FormControl('', { updateOn: 'blur' }),
-      infopersonal: new FormControl('', { updateOn: 'blur' })
+      infopersonal: new FormControl('', { updateOn: 'blur' }),
+      sexo: new FormControl('', { updateOn: 'blur' })
     }, { updateOn: 'change' });
 
   }
@@ -46,10 +47,15 @@ export class EditprofilePage implements OnInit {
       name: this.user.name,
       telephone: this.user.telephone,
       infopersonal: this.user.infopersonal,
+      sexo: this.user.sexo,
     });
   }
 
   async actualizarInfo() {
+
+    if (this.formulario.value.sexo === '') {
+      this.formulario.value.sexo = null;
+    }
 
     const usuario = new Usuario(
       this.formulario.value.name,
@@ -61,7 +67,10 @@ export class EditprofilePage implements OnInit {
       null,
       null,
       this.user.id,
+      null,
+      this.formulario.value.sexo,
     );
+
     this.revisarConexion().then(async (resp) => {
       if (resp) {
         const valido = await this._usuarioService.actualizarUsuario(usuario);

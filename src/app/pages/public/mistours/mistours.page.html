@@ -5,13 +5,17 @@
             <ion-row>
                 <div *ngFor="let tour of tours" class="fullwidth">
                     <ion-card class="tall">
-
-                        <ion-card-header>
-
-                            <ion-card-title><b>{{tour.name}}</b>
-                                <strong style="float: right;"> $ {{tour.price}}{{tour.moneda}}  </strong>
-                            </ion-card-title>
-                        </ion-card-header>
+                        <ion-toolbar>
+                            <div slot="start" style="padding-left: 5%; width: 100%;">
+                                <ion-card-title><b>{{tour.name}}</b>
+                                </ion-card-title>
+                            </div>
+                            <div slot="end">
+                                <ion-button fill="clear" (click)="lanzarMenu(tour)">
+                                    <ion-icon slot="icon-only" name="more"></ion-icon>
+                                </ion-button>
+                            </div>
+                        </ion-toolbar>
                         <ion-card-content>
                             <ion-list mode='ios' lines='none'>
                                 <ion-item>
@@ -19,7 +23,7 @@
                                         <img [src]="tour.get_photos[0].photo  | imagenprofile:'tours'">
                                     </ion-avatar>
                                     <ion-label>{{tour.cuidad}} {{tour.pais}}</ion-label>
-
+                                    <strong style="float: right;"> $ {{tour.price}}{{tour.moneda}}  </strong>
                                 </ion-item>
                             </ion-list>
                             <ion-list>

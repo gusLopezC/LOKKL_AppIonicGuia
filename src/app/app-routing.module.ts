@@ -24,8 +24,9 @@ const routes: Routes = [
   { path: 'cancel-reservation', loadChildren: () => import('./pages/public/reservation/cancel-reservation/cancel-reservation.module').then(m => m.CancelReservationPageModule) },
   { path: 'chat', loadChildren: () => import('./pages/public/reservation/chat/chat.module').then(m => m.ChatPageModule) },
   // tslint:disable-next-line: max-line-length
-  { path: 'createtour', loadChildren: () => import('./pages/public/mistours/createtour/createtour.module').then(m => m.CreatetourPageModule) }
+  { path: 'mensajes', loadChildren: () => import('./pages/public/mensajes/mensajes.module').then(m => m.MensajesPageModule) },
 
+  { path: 'emergencia', loadChildren: './pages/public/profile/emergencia/emergencia.module#EmergenciaPageModule' },
 ];
 @NgModule({
   imports: [

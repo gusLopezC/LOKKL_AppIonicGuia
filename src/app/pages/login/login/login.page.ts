@@ -27,6 +27,7 @@ export class LoginPage implements OnInit {
     public alertCtrl: AlertController,
     public loadingCtrl: LoadingController,
     private formBuilder: FormBuilder,
+    public toastController: ToastController,
     private platform: Platform,
     private fb: Facebook,
     private googlePlus: GooglePlus,
@@ -58,6 +59,7 @@ export class LoginPage implements OnInit {
     if (valido) {
       this.navCtrl.navigateRoot('/home', { animated: true });
     } else {
+
     }
   }
 
@@ -110,14 +112,11 @@ export class LoginPage implements OnInit {
 
   async doGoogleLogin() {
     let params;
-    if (this.platform.is('android')) {
-      params = {
-        'webClientId': '455775910147-6ea2ienn9rljl9rm2shrc56a0sni5kqg.apps.googleusercontent.com',
-        'offline': true,
-      };
-    } else {
-      params = {};
-    }
+    params = {
+      'webClientId': '455775910147-6ea2ienn9rljl9rm2shrc56a0sni5kqg.apps.googleusercontent.com',
+      'offline': true,
+    };
+
     this.googlePlus.login(params)
       .then((response) => {
         const { idToken, accessToken } = response;

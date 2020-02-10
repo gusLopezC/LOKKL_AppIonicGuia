@@ -20,7 +20,6 @@ export class ReservasService {
 
   obtenerReservas(id: string, token: string): Observable<any> {
 
-    console.log(this.token);
 
     const url = environment.apiUrl + '/api/reservaciones/obtenerReservaciones/' + id;
 

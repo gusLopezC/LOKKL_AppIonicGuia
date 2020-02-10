@@ -11,7 +11,11 @@ const routes: Routes = [
   {
     path: 'editprofile',
     loadChildren: () => import('./editprofile/editprofile.module').then( m => m.EditprofilePageModule)
+  },  {
+    path: 'emergencia',
+    loadChildren: () => import('./emergencia/emergencia.module').then( m => m.EmergenciaPageModule)
   },
+
 
 ];
 

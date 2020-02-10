@@ -17,13 +17,13 @@
         <img *ngIf="imagenTemp" [src]='imagenTemp' alt="" class="image-round border-white">
     </div>
     <br>
-    <div class="margin-bottom margin-top text-center">
+    <!--<div class="margin-bottom margin-top text-center">
         <label class="custom-file-upload" style="margin:auto;max-width:400px">
             <input id="file-upload" placeholder="Seleciona imagen" type="file" accept=".png, .jpg"
               (change)="onUpload($event)" />
             <ion-icon margin-right name="cloud-download"></ion-icon> {{ 'EditProfile.Selectphoto' | translate }}
           </label>
-    </div>
+    </div>-->
 
     <ion-row *ngIf="user">
         <ion-col size="12">
@@ -42,6 +42,14 @@
                     <ion-label position="floating">{{ 'EditProfile.telephone' | translate }}</ion-label>
                     <ion-input class="form-control" type="number" formControlName="telephone">
                     </ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label>{{ 'EditProfile.sexo' | translate }}</ion-label>
+                    <ion-select placeholder="Select One" formControlName="sexo">
+                        <ion-select-option value="Femenino">{{ 'EditProfile.femenino' | translate }}</ion-select-option>
+                        <ion-select-option value="Masculino">{{ 'EditProfile.masculino' | translate }}</ion-select-option>
+                        <ion-select-option value="Other">{{ 'EditProfile.otro' | translate }}</ion-select-option>
+                    </ion-select>
                 </ion-item>
                 <ion-item>
                     <ion-label position="floating">{{ 'EditProfile.Biografia' | translate }} </ion-label>

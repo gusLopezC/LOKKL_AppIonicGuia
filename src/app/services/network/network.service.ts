@@ -69,14 +69,14 @@ export class NetworkService {
 
   async revisarConexion(retries = 1) {
 
-    const loading = await this.loadingController.create({
-      message: 'Loading'
-    });
-    await loading.present();
+    // const loading = await this.loadingController.create({
+    //   message: 'Cargando dos'
+    // });
+    // await loading.present();
 
     return new Promise(resolve => {
       if (this.getCurrentNetworkStatus() === ConnectionStatus.Online) {
-        loading.dismiss();
+        // loading.dismiss();
         resolve(true);
       } else {
         setTimeout(() => {
@@ -84,7 +84,7 @@ export class NetworkService {
             retries++;
             return this.revisarConexion(retries);
           } else {
-            loading.dismiss();
+            // loading.dismiss();
             this.presentToast();
             resolve(false);
           }

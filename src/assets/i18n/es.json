@@ -2,6 +2,7 @@
     "TabsMenu": {
         "Reservaciones": "Reservaciones",
         "AdministraTours": "Administra tus tours",
+        "Mensajes": "Mensajes",
         "UneteLokkl": "Unete a LOKKL",
         "ComoPagarte": "Dinos cómo pagarte",
         "Favoritos": "Favoritos",
@@ -28,9 +29,11 @@
         "SincronizaSesion": "Sincroniza tu reservación y administra tu tour y accede más rápido a tus actividades favoritas.",
         "IniciarSesion": "Iniciar Sesión",
         "Editar": "Editar",
+        "InformacionPersonal": "Informacion Personal",
+        "Contactoemergencia": "Contacto de emergencia",
         "DinosComoPagarte": "Dinos como pagarte",
         "Terminosycondiciones": "Términos y condiciones",
-        "Comopodemosayudarte": "¿Como podemos ayudarte?",
+        "Comopodemosayudarte": "¿Cómo podemos ayudarte?",
         "AcerdedeLOKKL": "Acerca de LOKKL",
         "CerrarSesion": "Cerrar Sesión"
 
@@ -42,6 +45,11 @@
         "InformacionPersonal": "Información personal",
         "name": "Nombre",
         "telephone": "Teléfono",
+        "email": "Email",
+        "sexo": "Sexo",
+        "masculino": "Masculino",
+        "femenino": "Femenino",
+        "otro": "Otro",
         "Biografia": "Biografía",
         "Enviar": "Enviar",
         "ChangePassword": "Cambiar Contraseña",
@@ -53,7 +61,13 @@
         "Deletecuenta": " Desactivar cuenta"
 
     },
-
+    "Emergencia": {
+        "ContactoEmergencia": "Contacto de emergencia",
+        "TextoContactoEmergencia": "Disponer de un contacto de emergencia nos da otra opcion para ayduarte si alguna vez te encuentras en una situacion de emergencia.",
+        "": "",
+        "": "",
+        "": ""
+    },
     "Help": {
         "HelpTitle": "Necesitas contactarnos",
         "Enviamosmail": "Enviamos un email",
@@ -109,5 +123,15 @@
     "AdministrarTour": {
         "Notienestours": "Aún no tienes tour creado",
         "PuedescreartuTour": "Puedes crear un tour y llega a miles de viajeros"
+    },
+    "Mensajes": {
+        "Mensajes": "Mensajes",
+        "Nomensajes": "No tienes mensajes",
+        "": "",
+        "": "",
+        "": "",
+        "": "",
+        "": ""
     }
+
 }
