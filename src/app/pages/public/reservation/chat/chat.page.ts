@@ -55,8 +55,11 @@ export class ChatPage {
 
   async obtenerMensajes() {
 
+    if (this.reserva.order_nr) {
+      this.reserva.id_reservacion = this.reserva.id;
+    }
+
     const loading = await this.loadingController.create({
-      message: 'Hellooo',
       duration: 2000
     });
     await loading.present();

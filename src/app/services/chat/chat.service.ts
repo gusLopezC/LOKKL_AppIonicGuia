@@ -25,7 +25,8 @@ export class ChatService {
 
   obtenerChatsGuia(id: any, token: string): Observable<any> {
 
-    this.obtenertoken();
+    console.log(token);
+    
     const url = environment.apiUrl + '/api/mensajes/obtenerChatsGuia/' + id;
 
 
@@ -39,7 +40,7 @@ export class ChatService {
 
   obtenerChatReservacion(id: any, token: string): Observable<any> {
 
-
+    console.log(token);
     const url = environment.apiUrl + '/api/mensajes/obtenerChatReservacion/' + id;
 
     let headers = new HttpHeaders();
@@ -61,6 +62,8 @@ export class ChatService {
       id_guia: reserva.id_guia,
       mensaje
     };
+
+    console.log(cuerpoDatos);
 
     const url = environment.apiUrl + '/api/mensajes/sendMessage';
 

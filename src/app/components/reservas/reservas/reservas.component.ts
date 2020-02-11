@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ActionSheetController, ToastController } from '@ionic/angular';
+import { ActionSheetController, ToastController, AlertController } from '@ionic/angular';
 import { Router, NavigationExtras, ActivatedRoute } from '@angular/router';
 import { ReservasService } from '../../../services/service.index';
 import { Payment } from '../../../models/payment.model';
@@ -17,11 +17,13 @@ export class ReservasComponent implements OnInit {
   constructor(
     public actionSheetController: ActionSheetController,
     public toastController: ToastController,
+    public alertController: AlertController,
     private router: Router,
     public _reservasService: ReservasService) {
   }
 
-  ngOnInit() { }
+  ngOnInit() {
+  }
 
   async lanzarMenu(reserva) {
     const actionSheet = await this.actionSheetController.create({
@@ -29,11 +31,17 @@ export class ReservasComponent implements OnInit {
         text: 'Send Message',
         icon: 'chatboxes',
         handler: () => {
+          if (this.reservas[0].status === 'Pendiente') {
+            this.mostrarAlertaChat();
+            return false;
+          }
+
           let navigationExtras: NavigationExtras = {
             state: {
               reserva: reserva,
             }
           };
+          console.log(navigationExtras);
           this.router.navigate(['/chat'], navigationExtras);
         }
       }, {
@@ -52,6 +60,18 @@ export class ReservasComponent implements OnInit {
     await actionSheet.present();
   }
 
+
+  async mostrarAlertaChat() {
+    const alert = await this.alertController.create({
+      header: 'Alerta',
+      message: 'Debes aceptar la reserva antes',
+      buttons: ['OK']
+    });
+
+    await alert.present();
+
+  }
+
   aceptarTour(id: string) {
     this._reservasService.actualizarEstadoReserva(id, 'Aceptar')
       .subscribe((resp: any) => {
@@ -64,7 +84,7 @@ export class ReservasComponent implements OnInit {
     const toast = await this.toastController.create({
       message: 'Tour aceptado.',
       duration: 2000,
-      color: 'sucess'
+      color: 'success'
     });
     toast.present();
   }

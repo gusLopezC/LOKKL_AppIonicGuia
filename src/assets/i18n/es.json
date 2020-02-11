@@ -1,7 +1,7 @@
 {
     "TabsMenu": {
-        "Reservaciones": "Reservaciones",
-        "AdministraTours": "Administra tus tours",
+        "Reservaciones": "Reservas",
+        "AdministraTours": "Mis tours",
         "Mensajes": "Mensajes",
         "UneteLokkl": "Unete a LOKKL",
         "ComoPagarte": "Dinos cómo pagarte",
@@ -29,7 +29,7 @@
         "SincronizaSesion": "Sincroniza tu reservación y administra tu tour y accede más rápido a tus actividades favoritas.",
         "IniciarSesion": "Iniciar Sesión",
         "Editar": "Editar",
-        "InformacionPersonal": "Informacion Personal",
+        "InformacionPersonal": "Información Personal",
         "Contactoemergencia": "Contacto de emergencia",
         "DinosComoPagarte": "Dinos como pagarte",
         "Terminosycondiciones": "Términos y condiciones",
@@ -50,7 +50,7 @@
         "masculino": "Masculino",
         "femenino": "Femenino",
         "otro": "Otro",
-        "Biografia": "Biografía",
+        "Biografia": "Cuentanos sobre ti ...",
         "Enviar": "Enviar",
         "ChangePassword": "Cambiar Contraseña",
         "PasswordActual": "Contraseña Actual",
@@ -63,10 +63,7 @@
     },
     "Emergencia": {
         "ContactoEmergencia": "Contacto de emergencia",
-        "TextoContactoEmergencia": "Disponer de un contacto de emergencia nos da otra opcion para ayduarte si alguna vez te encuentras en una situacion de emergencia.",
-        "": "",
-        "": "",
-        "": ""
+        "TextoContactoEmergencia": "Tu seguridad es nuestra prioridad."
     },
     "Help": {
         "HelpTitle": "Necesitas contactarnos",
