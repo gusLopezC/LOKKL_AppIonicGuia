@@ -37,7 +37,6 @@ export class MensajesPage {
   ) { }
 
   async ionViewWillEnter() {
-    console.log('Entra a mensajes');
     this.revisarSesion();
 
     this.obtenerMensajes();
@@ -62,6 +61,7 @@ export class MensajesPage {
           console.log(resp);
           if (resp.Mensajes.length > 0) {
             this.mensajes = resp.Mensajes;
+            this.Nomensajes = false;
           } else {
             this.Nomensajes = true;
           }
@@ -72,9 +72,12 @@ export class MensajesPage {
 
   abrirChat(mensajes) {
 
+    console.log(mensajes);
+
     let navigationExtras: NavigationExtras = {
       state: {
         reserva: mensajes,
+        nameCliente: mensajes.get_comprador[0].name
       }
     };
     this.router.navigate(['/chat'], navigationExtras);

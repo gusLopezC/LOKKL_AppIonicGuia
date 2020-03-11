@@ -39,15 +39,16 @@ export class ReservasComponent implements OnInit {
           let navigationExtras: NavigationExtras = {
             state: {
               reserva: reserva,
+              nameCliente: reserva.get_comprador[0].name
             }
           };
-          console.log(navigationExtras);
           this.router.navigate(['/chat'], navigationExtras);
         }
       }, {
         text: 'Cancel Reservation',
         icon: 'close',
         handler: () => {
+          console.log(reserva);
           let navigationExtras: NavigationExtras = {
             state: {
               reserva: reserva,

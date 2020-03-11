@@ -26,6 +26,7 @@ export class ChatPage {
   chats = [];
   token: string;
   user: Usuario;
+  nameCliente: any;
 
   constructor(
     private _usuarioService: UsuariosService,
@@ -41,7 +42,10 @@ export class ChatPage {
     this.route.queryParams.subscribe(params => {
       if (this.router.getCurrentNavigation().extras.state) {
         this.reserva = this.router.getCurrentNavigation().extras.state.reserva;
+        this.nameCliente = this.router.getCurrentNavigation().extras.state.nameCliente;
+
       }
+      console.log(this.reserva);
     });
 
 
@@ -94,10 +98,21 @@ export class ChatPage {
 
     this.token = await this._usuarioService.getToken();
 
+    /*const remitente = this.reserva.id_guia;
+    const receptor = this.reserva.id_comprador;
+
+    console.log(remitente);
+    return false;
+    this.reserva.id_comprador = remitente;
+    this.reserva.id_guia = receptor;
+*/
+
     const loading = await this.loadingController.create({
       duration: 2000
     });
     await loading.present();
+
+
 
     this._ChatService.sendMessage(this.reserva, this.message, this.token)
       .subscribe(resp => {

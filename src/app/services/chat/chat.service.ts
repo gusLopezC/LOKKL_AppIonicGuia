@@ -25,8 +25,7 @@ export class ChatService {
 
   obtenerChatsGuia(id: any, token: string): Observable<any> {
 
-    console.log(token);
-    
+
     const url = environment.apiUrl + '/api/mensajes/obtenerChatsGuia/' + id;
 
 
@@ -40,7 +39,6 @@ export class ChatService {
 
   obtenerChatReservacion(id: any, token: string): Observable<any> {
 
-    console.log(token);
     const url = environment.apiUrl + '/api/mensajes/obtenerChatReservacion/' + id;
 
     let headers = new HttpHeaders();
@@ -54,7 +52,6 @@ export class ChatService {
 
   sendMessage(reserva, mensaje: string, token: string): Observable<any> {
 
-    console.log(reserva);
 
     var cuerpoDatos = {
       id_reservacion: reserva.id_reservacion,
@@ -63,7 +60,7 @@ export class ChatService {
       mensaje
     };
 
-    console.log(cuerpoDatos);
+    console.log(cuerpoDatos)
 
     const url = environment.apiUrl + '/api/mensajes/sendMessage';
 
